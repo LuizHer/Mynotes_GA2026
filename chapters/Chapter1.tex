@@ -185,7 +185,7 @@ The dimension has the expected property: If $W\subset V$ is closed, then $\dim(W
         &\deg \upleft{a}\text{HF}_{I(W)}(t)\leq \deg \upleft{a}\text{HF}_{I(V)}(t).
     \end{split}
 \end{equation}
-\item(Transcendence degree). Let $A$ be a finitely generated $\bbF$-algebra. We define 
+\item(Transcendence degree). Let $A$ be a field which is also a finitely generated $\bbF$-algebra. We define 
 the transcendence degree of $A$ over $\bbF$ (and write $\partial_{\bbF}(A)$) to be largest size of an algebraicaly independent subset of $A$ over 
 $\bbF$. 
 \begin{example}
@@ -505,3 +505,54 @@ $\bbF$.
 \end{itemize}
  
 
+\section{Lecture 1}
+First some definitions and lemmas worth to remember.
+\begin{itemize}
+    \item (Integral extension). Let $R$ be a ring and $S\subset R$ a subring. We say that 
+    $R$ is integrally dependent over $S$ if every $r\in R$ is integral over $S$, that is, there 
+    exist a monic polynomial $f\in S[X]$ such that $f(r)=0$.
+    \begin{lemma}
+        Let $S\subset R$ be rings. 
+        A finite subset of elements $b_1,\dots, b_m\in R$ are all integral over $S$ if and only if 
+        $S[b_1,\dots, b_m]$ is finitely generated (as a $S-$module) over $S$.
+    \end{lemma}
+    Proof (sketch): $(\Rightarrow)$ Let $b\in R$ be integral over $S$, i.e., there exist 
+    \begin{equation}
+     f =    X^d + a_1X^{d-1} +\cdots + a_d \in S[X]
+    \end{equation}
+    such that $f(b)=0$. Then, using long division, we see that $S[b]=S +\cdots + S b^{d-1}$ which is finitely generated. 
+    Now, if $b_1,\dots, b_m$ are all integral over $S$, we see argue by induction that $S[b_1,\dots, b_{m-1}]$ is finitely generated 
+    over $S$. However, since $b_m$ is integral over $S[b_1,\dots, b_{m-1}]$ and $S[b_1,\dots,b_m]$ is finitely generated 
+    over $[b_1,\dots, b_{m-1}]$, and then over $S$.\par  
+    $(\Leftarrow)$ Suppose that $S[b_1,\dots, b_m] = S\beta_1+\cdots+S\beta_n$ for some $\beta_i\in R$. Then for any 
+    $b\in R$ which fixes $S[b_1,\dots,b_m]$, we have $b\beta_i= \sum_j a_{ij}\beta_j$ for some $(a_{ij})\in\text{Mat}_n(S)$. 
+    Therefore 
+    \begin{equation}
+      0 =  (bI-(a_{ij}))^*(bI-(a_{ij}))v = \det(bI-(a_{ij}))v
+    \end{equation}
+    where $v=(\beta_1,\dots,\beta_n)^T$. Therefore $\det(bI-(a_{ij}))\beta_i=0,\forall i$ and since 
+    $1\in S\beta_1+\cdots+S\beta_n$, we see that $\det(bI-(a_{ij}))=0$. Since $\det(X-(a_{ij}))\in S[X]$ is monic, we 
+    are done.\qed 
+    \begin{corollary}
+        (Transitive property of integral dependence). Given rings $R \supset S\supset T$, if $R$ is integral over $S$ and 
+        $S$ is integral over $T$, then $R$ is integral over $T$. 
+    \end{corollary}
+    \begin{lemma}\label{lemma : extension field transcendence degree}
+        Let $K\supset k$ ($k$ a perfect field) be a finitely generated extension field with transcendence degree $\partial_k(K)=d$, then 
+        there exist generators $z_1,\dots,z_d,z_{d+1}$ such that 
+        \begin{itemize}
+            \item[(1)] $K=k(z_1,\dots,z_{d+1})$
+            \item[(2)] $\{z_1,\dots,z_d\}$ are algebraicaly independent
+            \item[(3)] $z_{d+1}$ is separable over $k(z_1,\dots, z_d)$ 
+        \end{itemize} 
+    \end{lemma}  
+\end{itemize}
+
+\begin{dang}
+\begin{lemma}
+    (Noether's normalization lemma). Let $R$ be a finitely generated algebra over $k$. Assume also that $R$ is an integral domain.
+    If $R$ has transcende degree $n$ over $k$ (which means that $\partial_k\text{Frac}(R)=n$), then 
+    there exist $x_1,\dots, x_n\in R$ algebraicaly independent and such that $R$ is integral dependent
+    over $k[x_1,\dots,x_n]$.
+\end{lemma}
+\end{dang}

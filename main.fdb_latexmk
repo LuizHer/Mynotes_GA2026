@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1786707361.4068 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1786807766.77639 -1
   "bibliography.bib" 1764993314 1723 9b608173f9712f84e66696c9e74161c2 ""
-  "main.bcf" 1786707360 108553 367f9587eda5666319fb09c8ea80b732 "pdflatex"
+  "main.bcf" 1786807766 108553 367f9587eda5666319fb09c8ea80b732 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1786707359.27266 "c:/Users/herin/OneDrive/Documents/Matematica/Algebraic Geometry 2026/Mynotes_GA2026/main.tex" "main.pdf" "main" 1786707361.40995 0
+["pdflatex"] 1786807765.07161 "c:/Users/herin/OneDrive/Documents/Matematica/Algebraic Geometry 2026/Mynotes_GA2026/main.tex" "main.pdf" "main" 1786807766.77707 0
   "C:/Users/herin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1769977687 81919 f03c646d66c2441846ff09182cd09695 ""
   "C:/Users/herin/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1765139255 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/herin/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1765139256 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -271,18 +271,18 @@
   "C:/Users/herin/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/herin/AppData/Local/Programs/MiKTeX/tex/latex/yfonts/yfonts.sty" 1554482334 4491 ce392d5b8dc51027fcbcd62c6c980bc3 ""
   "c:/Users/herin/OneDrive/Documents/Matematica/Algebraic Geometry 2026/Mynotes_GA2026/main.tex" 1786631873 743 e08061dc9f181cb61e8435e8e551fa8d ""
-  "chapters/Chapter1.aux" 1786707360 5352 ebe190748d8edf8b677bdebc7e56bf9a "pdflatex"
-  "chapters/Chapter1.tex" 1786707356 29151 a76b7c68ba8e11b99606f858234dd677 ""
-  "main.aux" 1786707360 310 4eae3adf3794d7385ef87a12846cfce5 "pdflatex"
+  "chapters/Chapter1.aux" 1786807766 5837 a8c41a6fa8bf7586f4fa37ab2664dd46 "pdflatex"
+  "chapters/Chapter1.tex" 1786807764 35885 e985ea19454e602a81b3b365c978e512 ""
+  "main.aux" 1786807766 310 a23491524e7b6b221804699154c381b2 "pdflatex"
   "main.bbl" 1773442068 486 76d65a242ec496c9b4361af646ff12cb "biber main"
-  "main.out" 1786707360 487 3768f705da3df8724679e3839a621a2c "pdflatex"
-  "main.run.xml" 1786707360 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.out" 1786807766 523 62d293c193dc85e205e18c290152b357 "pdflatex"
+  "main.run.xml" 1786807766 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1786631873 743 e08061dc9f181cb61e8435e8e551fa8d ""
-  "main.toc" 1786707360 291 1f02c6fc86631f951e54c355d22ae290 "pdflatex"
+  "main.toc" 1786807766 297 99ff163c71fa5f97746c130cdd5ce1aa "pdflatex"
   "packages/core.sty" 1764993314 2363 5fea29727f664a523a77519006377d4a ""
-  "packages/dang.sty" 1764993314 630 be8093e40622096c1e0cb5089d7978a3 ""
+  "packages/dang.sty" 1786806220 626 9e3165967229bf4484d2d774b1a1b733 ""
   "packages/hcalculation.sty" 1764993314 557 326651bca1e629d9e947bdaa4764cacf ""
-  "packages/rufino.sty" 1780875679 723 f38ced5bff9dccdd1012f30d31c2271f ""
+  "packages/rufino.sty" 1786807721 753 9b70d720fb8cfcdc82e68f9bc8c24fb0 ""
   (generated)
   "chapters/Chapter1.aux"
   "main.aux"

@@ -1,4 +1,7 @@
-\contentsline {chapter}{\numberline {1}Algebraic sets}{2}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Algebraic Groups}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Basic definitions}{2}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Tangent Spaces}{7}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Lecture 1 and 2}{12}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Pre - varieties and varieties}{12}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Projective varieties}{12}{subsection.1.3.1}%
+\contentsline {chapter}{\numberline {2}Mynotes from 2026 class}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Lecture 1 and 2}{15}{section.2.1}%

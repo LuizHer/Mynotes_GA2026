@@ -1,4 +1,4 @@
-\chapter{Algebraic sets}
+\chapter{Algebraic Groups}
 \section{Basic definitions}
 Some important observations:
 \begin{itemize}
@@ -504,166 +504,96 @@ $\bbF$.
   \end{center}
 \end{itemize}
  
-
-\section{Lecture 1 and 2}
-First some definitions and lemmas worth to remember.
-\begin{itemize}
-    \item (Integral extension). Let $R$ be a ring and $S\subset R$ a subring. We say that 
-    $R$ is integrally dependent over $S$ if every $r\in R$ is integral over $S$, that is, there 
-    exist a monic polynomial $f\in S[X]$ such that $f(r)=0$.
-    \begin{lemma}\label{lemma : characterization of integral extensions}
-        Let $S\subset R$ be rings. 
-        A finite subset of elements $b_1,\dots, b_m\in R$ are all integral over $S$ if and only if 
-        $S[b_1,\dots, b_m]$ is finitely generated (as a $S-$module) over $S$.
-    \end{lemma}
-    Proof: $(\Rightarrow)$ Let $b\in R$ be integral over $S$, i.e., there exist 
-    \begin{equation}
-     f =    X^d + a_1X^{d-1} +\cdots + a_d \in S[X]
-    \end{equation}
-    such that $f(b)=0$. Then, using long division, we see that $S[b]=S +\cdots + S b^{d-1}$ which is finitely generated. 
-    Now, if $b_1,\dots, b_m$ are all integral over $S$, we can argue by induction that $S[b_1,\dots, b_{m-1}]$ is finitely generated 
-    over $S$. However, since $b_m$ is integral over $S[b_1,\dots, b_{m-1}],\;S[b_1,\dots,b_m]$ is finitely generated 
-    over $[b_1,\dots, b_{m-1}]$ and it must be finitely generated over $S$ aswell.\par  
-    $(\Leftarrow)$ Suppose that $S[b_1,\dots, b_m] = S\beta_1+\cdots+S\beta_n$ for some $\beta_i\in R$. Then for any 
-    $b\in R$ which fixes $S[b_1,\dots,b_m]$, we have $b\beta_i= \sum_j a_{ij}\beta_j$ for some $(a_{ij})\in\text{Mat}_n(S)$. 
-    Therefore 
-    \begin{equation}
-      0 =  (bI-(a_{ij}))^*(bI-(a_{ij}))v = \det(bI-(a_{ij}))v
-    \end{equation}
-    where $v=(\beta_1,\dots,\beta_n)^T$. Therefore $\det(bI-(a_{ij}))\beta_i=0,\forall i$ and since 
-    $1\in S\beta_1+\cdots+S\beta_n$, we see that $\det(bI-(a_{ij}))=0$. Since $\det(X-(a_{ij}))\in S[X]$ is monic, we 
-    are done.\qed 
-    \begin{corollary}\label{corollary : transitive property integral dependence}
-        (Transitive property of integral dependence). Given rings $R \supset S\supset T$, if $R$ is integral over $S$ and 
-        $S$ is integral over $T$, then $R$ is integral over $T$.\par 
-        \textcolor{red}{Question: Do we need Noetherian hypothesis using this statement?}
-    \end{corollary}
-    Proof: Let $r\in R$, then by hypothesis there exist $f=X^d+s_1X^{d-1}+\cdots\in S[X]$ such that $f(r)=0$.
-    Define $A=T[s_1,\dots,s_d]$, then $A[r]$ is a finitely generated $A-$module because $S\subset A$ and lemma~(\ref{lemma : characterization of integral extensions}). 
-    Now, since $A$ is a finitely generated $T-$module by lemma~(\ref{lemma : characterization of integral extensions}),
-    we see that $A[r]$ is a finitely generated $T-$module. Now, \textcolor{red}{assuming $T$ is Noetherian} we see that 
-    $T[r]$ is finitely generated as a $T-$module.\qed
-
-    \begin{remark}
-        We can certainly say (using the previous proof) that if $r\in R$, then $S[r]$ is finitely generated 
-        as a $T-$module.
-    \end{remark}
-
-    \begin{lemma}\label{lemma : extension field transcendence degree}
-        Let $K\supset k$ ($k$ a perfect field) be a finitely generated extension field with transcendence degree $\partial_k(K)=d$, then 
-        there exist generators $z_1,\dots,z_d,z_{d+1}$ such that 
-        \begin{itemize}
-            \item[(1)] $K=k(z_1,\dots,z_{d+1})$
-            \item[(2)] $\{z_1,\dots,z_d\}$ are algebraicaly independent
-            \item[(3)] $z_{d+1}$ is separable over $k(z_1,\dots, z_d)$ 
-        \end{itemize} 
-    \end{lemma}  
-\end{itemize}
-
+\section{Pre - varieties and varieties}
+\subsection{Projective varieties}
 \begin{dang}
-\begin{lemma}
-    (Noether's normalization lemma - Mumford's red book). Let $R$ be a finitely generated algebra over $k$. Assume also that $R$ is an integral domain.
-    If $R$ has transcende degree $n$ over $k$ (which means that $\partial_k\text{Frac}(R)=n$), then 
-    there exist $x_1,\dots, x_n\in R$ algebraicaly independent and such that $R$ is integral 
-    over $k[x_1,\dots,x_n]$.
-\end{lemma}
+    \begin{definition}
+        Let $V$ be a vector space, we define its associated projective variety by 
+        \begin{equation}
+            \bbP(V) = (V\setminus0 )/ \sim 
+        \end{equation}
+        where we let $v\sim w\iff v=\lambda w$ for some $\lambda\in k^\times$. Suppose that $\dim(V)=n+1$, 
+        then by choosing a basis of $V$, we identify $V=k^{n+1}$ and we write $\bbP(V)=\bbP^{n}$.
+    \end{definition}
 \end{dang}
-
-\begin{dang}
-    \begin{lemma}\label{lemma : Noether normalization}
-        (Noether's normalization lemma - Statement made in class). Let $R$ be a finitely generated 
-        $k-$algebra. Then there exist $x_1,\dots,x_n\in R$ algebraically independent over $k$ such that 
-        $R$ is integral over $k[x_1,\dots,x_n]$.
-    \end{lemma}
-\end{dang}
-Proof (Nagata): Since $R$ is finitely generated as a $k$-algebra, there exist generators $y_1,\dots,y_m$ such that 
-$R= k[y_1,\dots, y_m]$. Now suppose that $y_1,\dots, y_m$ are algebraically independent, then we can take $x_i = y_i$. 
-If not, then there exist $p\in k[Y_1,\dots, Y_m]\setminus0$ such that $p(y_1,\dots,y_m)=0$. Write 
+ 
+We define the Zariski topology on $\bbP$ by letting a closed set to be a locus of a homogeneous polynomial. So 
+$X\subset \bbP^n$ is closed if and only if $X=V(S)$ for some collection $S\subset k[X_0,\dots,X_n]^h$ of homogeneous polynomials. 
+We have a set of isomorphisms ($i=0,\dots,n$):
 \begin{equation}
-    p(Y_1,\dots,Y_m)=\sum_{\alpha\in\bbZ^m_\geq0}a_\alpha Y_1^{\alpha_1}\cdots Y_m^{\alpha_m}
+  \phi_i:  k[X_1,\dots,X_n]\rightarrow k[X_0,\dots, X_n]^h: g\mapsto
+   X_i^{\deg(g)}g(\frac{X_0}{X_i},\dots,\frac{X_{i-1}}{X_i},\frac{X_{i+1}}{X_i}\dots,\frac{X_n}{X_i}).
 \end{equation}
-and define a new polynomial 
+The inverse of this map takes $\phi_i:h(X_0,\dots, X_n)\mapsto h|_{X_i=1}$. In fact 
+if $h=\sum_{\alpha\in\bbZ_{\geq0}^{n+1}}a_\alpha X^\alpha\in k[X_0,\dots, X_n]$ is homogeneous of degree $d$, then
 \begin{equation}
     \begin{split}
-        q(Y_1,\dots,Y_m) &= p(Y_1,Y_2+Y_1^{r_2},\dots, Y_m+Y_1^{r_m})\\
-        &=\sum_\alpha a_\alpha(Y_1^{\alpha_1+r_2\alpha_2+\cdots+r_m\alpha_m}+\cdots) 
+        \psi_i\phi_i(h)&=X_i^dh(\frac{X_0}{X_i},\dots,\frac{X_{i-1}}{X_i},1,\frac{X_{i+1}}{X_i},\dots,\frac{X_n}{X_i})\\
+        &=\sum_\alpha a_\alpha X_1^{\alpha_1}\cdots X_{i-1}^{\alpha_{i-1}} X_i^{d-\sum_{j\neq i}\alpha_j}
+        X_{i+1}^{\alpha_{i+1}}\cdots X_n^{\alpha_n}\\
+        &=h,\;(\text{because }\sum_j\alpha_j=d).
+    \end{split}
+\end{equation} 
+Conversely 
+\begin{equation}
+        \phi_i\psi_i(g) = X_i^dg(\frac{X_0}{X_i},\dots,\frac{X_n}{X_i})\bigg|_{X_i=1}=g.
+\end{equation}
+A homogeneous coordinate of $\bbP^n$ is a map 
+\begin{equation}
+    f_i: U_i=\{[x_0,\dots,x_n]:x_i\neq0\}\rightarrow k^n:[x_0,\dots, x_n]\mapsto 
+    (\frac{x_0}{x_i},\dots, \frac{x_{i-1}}{x_i},\frac{x_{i+1}}{x_i},\dots, \frac{x_n}{x_i}).
+\end{equation}
+Since $U_i = \bbP^n\setminus V(x_i)$, it's an open set by definition. Furthermore, the map $f_i$ is an 
+isomorphism. In fact, let $Y\subset U_i$ be a closed set, then $\overline{Y}$ is closed in $\bbP^n$, so there exist 
+$S\subset k[X_0,\dots, X_n]^h$ such that $\overline{Y}=V(S)$. So we claim that $f_i(Y)=V(\psi_i(S))$. In fact, we have 
+\begin{equation}
+    \begin{split}
+        x=(x_0,\dots,x_{i-1},x_{i+1},\dots,x_n)\in V(\psi_i(S)) &\iff \phi_i(h)(x) = 0\;\forall h\in S\\
+        &\iff h[x_1,\dots,x_{i-1},1,x_{i+1},\dots, x_n]=0\;\forall h\in S\\
+        &\iff hf_i^{-1}(x)=0\;\forall h\in S\\
+        &\iff f_i^{-1}(x)\in V(S)\cap U_i = Y\\
+        &\iff x\in f_i(Y).
     \end{split}
 \end{equation}
-for some choice of positive integers $r_2,\dots,r_m$. Take a positive number $b>\alpha_i,\;\forall \alpha_i$ such that 
-$a_\alpha\neq0$. If we take $r_i = b^i$, then $\alpha_1+\alpha_2b+\cdots +\alpha_mb^{m-1}$ are all different numbers in base $b$. 
-So, from different powers of the form $\alpha_1+r_2\alpha_2+\cdots+r_m\alpha_m$ we have a maximal one 
-$d=\max\{\alpha_1+\cdots r_m\alpha_m:a_\alpha\neq0\}$ and 
-\begin{equation}
-    q(Y_1,\dots,Y_m) = aY_1^d + \text{smaller degree terms} \in k[Y_2,\dots, Y_m][Y_1],\;a\neq0.
-\end{equation}
-Now, if we let $z_i=y_i - y_1^{r_i}\in R,i=2,\dots,m$, we see that $q(y_1,z_2,\dots,z_m)=p(y_1,\dots,y_m)=0$ and 
-$y_1$ is integral over $k[z_2,\dots, z_m]$. By induction on number of generators, there exist $x_1,\dots, x_n$
-algebraically independent such that $k[z_2,\dots, z_m]$ is integral over $k[x_1,\dots, x_n]$. So, by lemma~\ref{lemma : characterization of integral extensions}
-and its corollary~(\ref{lemma : characterization of integral extensions}), we see that $k[y_1,z_2,\dots,z_m]$ is integral over $k[x_1,\dots,x_m]$. Now, by definition, it's clear 
-that $k[y_1,z_2,\dots,z_m]$ is a finitely generated $R-$module. So by the corollary~(\ref{corollary : transitive property integral dependence}) again, we 
-see that $R$ is integral over $k[x_1,\dots,x_m]$.\qed 
+Conversely, let $Z=V(T)\subset k^n$. We want to show that $f_i^{-1}(Z)\subset U_i$ is closed. We claim 
+that $f_i^{-1}(Z)=V(\phi_i(T))\cap U_i$, which can be proved in the sames lines as before.\par 
 
 \begin{dang}
-    \begin{lemma}\label{lemma : R is a field, S is a field}
-        Let $S\subset R$ be a ring extension. If $R$ is a field, which integral over $S$, then $S$ is a field. 
+    \begin{lemma}
+        (Affine characterization for closedness). A subset $X\subset\bbP^n$ is closed if and only if 
+        $X\cap U_i$ is closed in $U_i$ for all $i=0,\dots,n$.
     \end{lemma}
 \end{dang}
-Proof: Let $s\in S\setminus0$ and $r\in R$ be its inverse. Since $R$ is integral over $S$, there exist
-$f=X^d+a_1X^{d-1}+\cdots\in S[X]$ be such that $f(r)=0$. Therefore 
+
+\begin{dang}
+    \begin{lemma}
+        Consider the map 
+        \begin{equation}
+            \begin{split}
+                 \varphi:&\bbP^{m}\times \bbP^n\longrightarrow\bbP^{(m+1)(n+1)-1}\\
+                 &([x_0,\dots, x_m],[y_0,\dots,y_n])\longmapsto [\dots,x_iy_j,\dots]
+            \end{split}
+        \end{equation}
+        where we use $[\dots,x_iy_j,\dots]$ to abreviate $[x_0y_0,\dots, x_0y_n,\dots, x_my_0,\dots, x_my_n]$. 
+        We claim that $\varphi(\bbP^m\times\bbP^n)\subset\bbP^{(m+1)(n+1)-1}$ is a closed embedding, so it's 
+        an isomorphism onto its image.
+    \end{lemma}
+\end{dang}
+Proof: Use $U_i,V_j, W_{kl}$ to denote the affine open charts of 
+$\bbP^{m},\bbP^n$ and $\bbP^{(m+1)(n+1)-1}$ respectively. The strategy is to show that 
+$\varphi(U_i\times V_j)$ is closed in $W_{ij}$. However, if $(x,y)\in U_i\times V_i$, then 
+$\varphi(x,y)=[\dots,x_ky_l,\dots]$, where we assume $x_i=1,y_j=1$. Now, we observe that the image is of the form 
+$[\dots,u_{kl},\dots]$, where $u_{kl}=x_ky_l$. Then we conclude that the image is the locus of the system of homogeneous 
+polynomials $u_{kl}-u_{kj}u_{il}=0,\;\forall k,l$, which is a closed set. It remains to show that 
+$\varphi$ is injective. To do this, it's sufficient to see that $\varphi|_{U_i\times V_j}$ 
+(viewed as a map to $\varphi(U_i\times V_j)$) can be inverted. The equation is just 
 \begin{equation}
-   0= s^{d-1}f(r) = r + a_1 + sa_2+\cdots + s^{d-1}a_0\Rightarrow r\in S.
-\end{equation} 
+    [\dots, u_{kl},\dots]\mapsto ([u_{0j},\dots, u_{mj}],[u_{i0},\dots, u_{in}]).
+\end{equation}
 \qed
-
-\begin{remark}
-    Let $L|K$ be a field extension. Then
-    \begin{center}
-        \begin{tikzcd}
-            L|K \text{ finite extension}\arrow[r, bend left= 30] &  L|K \text{ algebraic extension}
-            \arrow[l, bend left= 30, "\text{+ finitely generated extension}"]
-        \end{tikzcd}
-    \end{center}
-\end{remark}
-
 \begin{dang}
-    \begin{theorem}\label{theorem : Zariski 1}
-        (Zariski). Let $k$ be a field and $\fr{m}\subset R=k[X_1,\dots, X_m]$ be a maximal ideal. Then $L=R/\fr{m}$ is 
-        a finite extension field of $k$.
-    \end{theorem}
+    \begin{corollary}
+        If $X\subset \bbP^m, Y\subset\bbP^n$ are closed subsets, then $\varphi(X\times Y)\subset\bbP^{(m+1)(n+1)-1}$
+        is a closed subset.
+    \end{corollary}
 \end{dang}
-Proof: By Noether normalizaiton lemma~(\ref{lemma : Noether normalization}) there exist 
-$a_1,\dots, a_n\in L$ algebraically independent such that $L$ is integral over $k[a_1,\dots,a_n]$. By lemma~(\ref{lemma : R is a field, S is a field}), 
-we conclude that $k[a_1,\dots,a_n]$ is a field. Suppose that $n>0$, so $a_1$ has an inverse. This means that 
-$a_1g(a_1,\dots, a_n) = 1$ for some $g\in k[X_1,\dots, X_n]$, which constradicts the fact that $a_1,\dots, a_n$ are 
-alegrbaically independent. Then we conclude that $L$ is an integral (and then algebraic) over $k$. However, since 
-$L$ is a finitely generated extension ($L=k(\overline{X_1},\dots,\overline{X_m})$) over $k$ we conclude that $L$ is in fact 
-a finite field extension over $k$.\qed
-
-\begin{dang}
-    \begin{theorem}\label{theorem : Hilbert's zero theorem}
-        Suppose that $k$ is an algebraically closed field.
-        Let $I\subset R =k[X_1,\dots, X_m]$ be an ideal, then $V(I)=\varnothing\iff I = k[X_1,\dots, X_m]$.
-    \end{theorem}
-\end{dang}
-Proof: If $I\neq R$, then there exist a maximal ideal $\fr{m}\supset I$. So $V(I)\supset V(\fr{m})$ and it's sufficient to 
-prove that $V(\fr{m})\neq\varnothing$. By theorem~(\ref{theorem : Zariski 1}), we have that $L=R/\fr{m}$ is a finite 
-$k-$extension, so we must have $L=k$ because $k$ is algebraically closed. So there exist $a_i\in k,i=1,\dots,m$ such that 
-$X_i - a_i\in\fr{m}$ and $(X_1-a_1,\dots, X_m-a_m)\subset \fr{m}$. However $\varphi: R\to k:F\mapsto F(a_1,\dots,a_m)$ has kernel 
-$\Ker(\varphi)=(X_1-a_1,\dots, X_m-a_m)$ and since $k$ is a field, $R/\Ker(\varphi)$ must be  a field and 
-$\Ker(\varphi)$ is a maximal ideal. Therefore we conclude that $\fr{m}=(X_1-a_1,\dots, X_m-a_m)$. Finally
-$V(X_1-a_1,\dots,X_m-a_m)=\{a_1,\dots,a_m\}\neq\varnothing$.\qed
-
-\begin{remark}
-    The hypothesis $k=\overline{k}$ in the previous theorem is crucial. For example if $k=\bbR$, we have 
-    $V(x^2+1)=\varnothing$.
-\end{remark}
-
-\begin{remark}
-    From the proof of the previous theorem, we see that there exist a bijection 
-    \begin{equation}
-        \begin{split}
-            k^n &\longleftrightarrow \left\{\begin{matrix}\text{maximal ideals}\\\fr{m}\subset R\end{matrix}\right\}\\
-           (a_1,\dots,a_n)&\longmapsto (X_1-a_1,\dots, X_n-a_n)
-        \end{split}
-    \end{equation}
-\end{remark}

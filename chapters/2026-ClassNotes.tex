@@ -131,12 +131,12 @@ $f=X^d+a_1X^{d-1}+\cdots\in S[X]$ be such that $f(r)=0$. Therefore
         a finite extension field of $k$.
     \end{theorem}
 \end{dang}
-Proof: By Noether normalizaiton lemma~(\ref{lemma : Noether normalization}) there exist 
+Proof: By Noether normalization lemma~(\ref{lemma : Noether normalization}), there exist 
 $a_1,\dots, a_n\in L$ algebraically independent such that $L$ is integral over $k[a_1,\dots,a_n]$. By lemma~(\ref{lemma : R is a field, S is a field}), 
 we conclude that $k[a_1,\dots,a_n]$ is a field. Suppose that $n>0$, so $a_1$ has an inverse. This means that 
 $a_1g(a_1,\dots, a_n) = 1$ for some $g\in k[X_1,\dots, X_n]$, which constradicts the fact that $a_1,\dots, a_n$ are 
 alegrbaically independent. Then we conclude that $L$ is an integral (and then algebraic) over $k$. However, since 
-$L$ is a finitely generated extension ($L=k(\overline{X_1},\dots,\overline{X_m})$) over $k$ we conclude that $L$ is in fact 
+$L$ is a finitely generated extension ($L=k(\overline{X}_1,\dots,\overline{X}_m)$) over $k$ we conclude that $L$ is in fact 
 a finite field extension over $k$.\qed
 
 \begin{dang}
@@ -158,7 +158,7 @@ $V(X_1-a_1,\dots,X_m-a_m)=\{a_1,\dots,a_m\}\neq\varnothing$.\qed
     $V(x^2+1)=\varnothing$.
 \end{remark}
 
-\begin{remark}
+\begin{corollary}\label{corollary : maximal ideals in k[x1,...,xn] ring characterization}
     From the proof of the previous theorem, we see that there exist a bijection 
     \begin{equation}
         \begin{split}
@@ -166,4 +166,48 @@ $V(X_1-a_1,\dots,X_m-a_m)=\{a_1,\dots,a_m\}\neq\varnothing$.\qed
            (a_1,\dots,a_n)&\longmapsto (X_1-a_1,\dots, X_n-a_n)
         \end{split}
     \end{equation}
-\end{remark}
+\end{corollary}
+
+
+\begin{dang}
+    \begin{theorem}
+        (Hilbert Nullstelensatz). Let $A\subset k[X_1,\dots, X_n]$ be an ideal, then 
+        \begin{equation}
+            IV(A) = \sqrt{A}.
+        \end{equation}
+    \end{theorem}
+\end{dang}
+Proof: The inclusion $\sqrt{A}\subset IV(A)$ is easy. Now, assume $g\in IV(A)$, where $A=(f_1,\dots, f_m)$. This 
+means that we have the hypothesis:
+\begin{equation}
+    f_i(a_1,\dots, a_n)=0,\;\forall i=1,\dots,m\Rightarrow g(a_1,\dots, a_n)=0\; (*)
+\end{equation}
+Now, define the ideal 
+\begin{equation}
+    I = Ak[X_1,\dots, X_{n+1}] + (1- g(X_1,\dots, X_n)X_{n+1}).
+\end{equation}
+If $I$ is a proper ideal, then by corollary~(\ref{corollary : maximal ideals in k[x1,...,xn] ring characterization}), we have 
+$I\subset (X_1-a_1,\dots, X_{n+1}-a_{n+1})$, which is the kernel of the evaluation map 
+$k[X_1,\dots,X_{n+1}]\rightarrow k: f\mapsto f(a_1,\dots, a_{n+1})$. This means that 
+\begin{equation}
+    \left\{\begin{aligned}
+        &f_i(a_1,\dots,a_n)=0,\;\forall i=1,\dots,m\\
+        &g(a_1,\dots,a_n)a_{n+1}=1
+    \end{aligned}\right.
+\end{equation}
+which contradicts our initial hypothesis $(*)$. Therefore, $I$ is not a proper ideal, so $1\in I$ and there exists 
+$h_1,\dots, h_{m+1}\in k[X_1,\dots, X_{n+1}]$ such that 
+\begin{equation}
+    1 = \sum_{j=1}^mh_j(X_1,\dots, X_{n+1})f_j(X_1,\dots,X_n)  + h_{m+1}(X_1,\dots,X_{n+1})(1-g(X_1,\dots,X_n)X_{n+1}).
+\end{equation}
+Now, by projecting this equation onto $k[X_1,\dots, X_{n+1}]/(1-g X_{n+1})$, we get 
+\begin{equation}
+    g^\ell(X_1,\dots,X_n) = \sum_{j=1}^m h_j(X_1,\dots, X_{n+1})g^\ell  \times f_j(X_1,\dots,X_n)
+\end{equation}
+modulo $(1-g X_{n+1})$, where $H_j = h_j(X_1,\dots, X_{n+1})g^\ell\in k[X_1,\dots,X_n],\;\forall j$ if $\ell\gg0$. 
+Since $\{\overline{X}_1,\dots,\overline{X}_{n+1}\}$ is algebraically free in $k[X_1,\dots, X_{n+1}]/((1-g X_{n+1}))$, we 
+conclude that, in fact, we have equality 
+\begin{equation}
+     g^\ell(X_1,\dots,X_n) = \sum_{j=1}^m H_j(X_1,\dots,X_n)  \times f_j(X_1,\dots,X_n)
+\end{equation}
+in $k[X_1,\dots,X_n]$.\qed

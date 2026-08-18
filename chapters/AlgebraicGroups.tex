@@ -581,10 +581,13 @@ that $f_i^{-1}(Z)=V(\phi_i(T))\cap U_i$, which can be proved in the sames lines 
 \end{dang}
 Proof: Use $U_i,V_j, W_{kl}$ to denote the affine open charts of 
 $\bbP^{m},\bbP^n$ and $\bbP^{(m+1)(n+1)-1}$ respectively. The strategy is to show that 
-$\varphi(U_i\times V_j)$ is closed in $W_{ij}$. However, if $(x,y)\in U_i\times V_i$, then 
+$\varphi(U_i\times V_j)$ is closed in $W_{ij}$. However, if $(x,y)\in U_i\times V_j$, then 
 $\varphi(x,y)=[\dots,x_ky_l,\dots]$, where we assume $x_i=1,y_j=1$. Now, we observe that the image is of the form 
-$[\dots,u_{kl},\dots]$, where $u_{kl}=x_ky_l$. Then we conclude that the image is the locus of the system of homogeneous 
-polynomials $u_{kl}-u_{kj}u_{il}=0,\;\forall k,l$, which is a closed set. It remains to show that 
+$[\dots,u_{kl},\dots]$, where $u_{kl}=x_ky_l$. Then we conclude that $\varphi(U_i\times V_j)$ is the locus 
+\begin{equation}
+   f_{ij}^{-1}( \{[u_{kl}:(k,l)\neq(i,j),\;u_{kl}-u_{kj}u_{il}=0,\;\forall k,l]\}) \overset{\text{closed}}{\subset}W_{ij}.
+\end{equation}
+It remains to show that 
 $\varphi$ is injective. To do this, it's sufficient to see that $\varphi|_{U_i\times V_j}$ 
 (viewed as a map to $\varphi(U_i\times V_j)$) can be inverted. The equation is just 
 \begin{equation}
@@ -597,3 +600,5 @@ $\varphi$ is injective. To do this, it's sufficient to see that $\varphi|_{U_i\t
         is a closed subset.
     \end{corollary}
 \end{dang}
+
+

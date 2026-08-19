@@ -170,7 +170,7 @@ $V(X_1-a_1,\dots,X_m-a_m)=\{a_1,\dots,a_m\}\neq\varnothing$.\qed
 
 
 \begin{dang}
-    \begin{theorem}
+    \begin{theorem}\label{theorem : Hilbert Nullstelensatz}
         (Hilbert Nullstelensatz). Let $A\subset k[X_1,\dots, X_n]$ be an ideal, then 
         \begin{equation}
             IV(A) = \sqrt{A}.
@@ -205,9 +205,127 @@ Now, by projecting this equation onto $k[X_1,\dots, X_{n+1}]/(1-g X_{n+1})$, we 
     g^\ell(X_1,\dots,X_n) = \sum_{j=1}^m h_j(X_1,\dots, X_{n+1})g^\ell  \times f_j(X_1,\dots,X_n)
 \end{equation}
 modulo $(1-g X_{n+1})$, where $H_j = h_j(X_1,\dots, X_{n+1})g^\ell\in k[X_1,\dots,X_n],\;\forall j$ if $\ell\gg0$. 
-Since $\{\overline{X}_1,\dots,\overline{X}_{n+1}\}$ is algebraically free in $k[X_1,\dots, X_{n+1}]/((1-g X_{n+1}))$, we 
+Since $\{\overline{X}_1,\dots,\overline{X}_{n+1}\}$ is algebraically free in $k[X_1,\dots, X_{n+1}]/(1-g X_{n+1})$, we 
 conclude that, in fact, we have equality 
 \begin{equation}
      g^\ell(X_1,\dots,X_n) = \sum_{j=1}^m H_j(X_1,\dots,X_n)  \times f_j(X_1,\dots,X_n)
 \end{equation}
 in $k[X_1,\dots,X_n]$.\qed
+
+\begin{remark}
+    We could have used the homomorphism 
+    \begin{equation}
+        k[X_1,\dots,X_{n+1}]\rightarrow k(X_1,\dots,X_n):X_{n+1}\mapsto g,\;X_i\mapsto X_i,\;i\neq n+1
+    \end{equation}
+    at the end of the previous proof.
+\end{remark}
+
+\section{Lecture 3}
+\begin{dang}
+    \begin{definition}
+        We define an affine algebraic set $V\subset k^n$ to be a set of the form $V=V(S)$ for 
+        some $S\subset k[\underline{X}]$.
+    \end{definition}
+\end{dang}
+
+\begin{notation}
+    Let $V$ be an affine algebraic set. We write 
+    \begin{equation}
+        D_V(g) = \{p\in V: g(p)\neq0\} = V\setminus V(g).
+    \end{equation}
+    These open sets are called ``principal open subsets''.
+\end{notation}
+
+\begin{dang}
+    \begin{lemma}
+        Any open subset $U\subset V$ of an affine algebraic set is quasicompact.
+    \end{lemma}
+\end{dang}
+Proof: Consider a covering $U=\bigcup_{\lambda\in\Lambda}U_\lambda$.
+Observe that $V\setminus U=V(g_1,\dots, g_m)$, so we have the equality $U=\bigcup_{i=1}^m D_V(g_i)$. In particular, we see 
+that principal open subsets form a basis for the Zariski topology on $V$. Therefore, 
+it's sufficient to prove that a principal open subset is quasicompact. So we assume $U=D_V(g)$. Furthermore, we have 
+$U_\lambda = \bigcup_{i=1}^{n_\lambda}D_V(g_{\lambda,i})$ and 
+\begin{equation}
+    U=\bigcup_{\lambda\in\Lambda}\bigcup_{i=1}^{n_\lambda}D_V(g_{\lambda,i}).
+\end{equation}
+So, without lost of generalizaiton, we can assume $U=\bigcup_{\lambda\in\Lambda}D_V(g_\lambda)$ from beginning. Now 
+\begin{equation}
+    \begin{split}
+        D_V(g) & = \bigcup_{\lambda\in\Lambda}D_V(g_\lambda)\iff\\
+      V\cap V(g) &= V\cap V(\langle g_\lambda:\lambda\in\Lambda\rangle)\iff\\ 
+      V\cap V(g) &= V\cap V(\langle g_\lambda:\lambda\in I\rangle)\;(I\subset \Lambda\;\text{ finite}).
+    \end{split}
+\end{equation}
+In the last equation we used Hilbert basis theorem: The sequence
+\begin{equation}
+    \langle g_{\lambda_1} \rangle \subset  \langle g_{\lambda_1},g_{\lambda_2} \rangle \subset \cdots 
+\end{equation}
+must terminate at some point, because $k[\underline{X}]$ is Noetherian. Then we conclude that 
+$D_V(g)=\bigcup_{\lambda\in I}D_V(g_\lambda)$.\qed
+
+\begin{dang}
+    \begin{definition}
+    (Regular functions). Let $V\subset k^n$ be an affine algebraic set and $U\subset V$ be an open set. 
+    A map $\varphi:U\to k$ is said to be \textit{regular} if for any $p\in U$, there exist $p\in U^\prime\subset U$, 
+    polynomials $f,g\in k[\underline{X}]$ such that $g(q)\neq0,\;\forall q\in U^\prime$ and  
+    $\varphi|_{U^\prime}=f/g|_{U^\prime}$.    
+    \end{definition}
+\end{dang}
+
+
+\begin{dang}
+    \begin{lemma}
+        Let $V\subset k^n$ be an affine algebraic set and $g\in k[X_1,\dots, X_n]$. Then the ser of regular functions 
+        $\varphi: D_V(g)\to k$ is of the form $f/g^m$ for some $f\in k[X_1,\dots, X_n]$ and $m>0$. So 
+        \begin{equation}
+            \mathcal{F}(D_V(g)) \cong k[X_1,\dots,X_n]_g
+        \end{equation}
+        where $\mathcal{F}$ denotes the sheaf of regular functions of $V$.
+    \end{lemma}
+\end{dang}
+Proof: First we have $D_V(g)=\bigcup_{i=1}^\ell D_V(g_i)$ and since $\varphi$ is regular, there exists 
+$f_i, h_i\in k[\underline{X}],\;i=1,\dots,\ell$ such that 
+\begin{equation}
+    q\in D_V(g_i)\Rightarrow h_i(q)\neq 0\;(\text{so }q\in D_V(h_i)),\;\varphi\big|_{D_V(g_i)}=\frac{f_i}{h_i}\bigg|_{D_V(g_i)}.
+\end{equation}
+Now, we have two fundamental relations:
+\begin{equation}
+    \left\{\begin{aligned}
+        &D_V(g_i)\subset D_V(h_i),\;\forall i=1,\dots,\ell\\
+        &D_V(g)=\bigcup_{i=1}^\ell D_V(g_i)
+    \end{aligned}\right.
+\end{equation}
+Using $V=V(F_1,\dots, F_m)$ and Hilbert Nullstelensatz~(\ref{theorem : Hilbert Nullstelensatz}), we get 
+\begin{equation}
+    \left\{\begin{aligned}
+        &\sqrt{(F_1,\dots,F_m,g_i)}\subset \sqrt{(F_1,\dots,F_m,h_i)},\;\forall i=1,\dots,\ell\quad (*)\\
+        &\sqrt{(F_1,\dots,F_m,g)}=\sqrt{(F_1,\dots,F_m,g_1,\dots,g_\ell)}\quad(**)
+    \end{aligned}\right.
+\end{equation}
+From $(*)$, we deduce that $g_i^{n_i}=\sum_j A_jF_j+B_ih_i$ and restricting to $V$ we get 
+$g_i^{n_i}=B_ih_i$. Now, since $\varphi\big|_{D_V(g_i)}=\frac{B_i f_i}{g_i^{n_i}}$ and 
+$D_V(g_i)=D_V(g_i^{n_i})$, we can \textcolor{red}{change notation} $B_i f_i\to f_i$ and $g_i^{n_i}\to g_i$.\par 
+
+Now we do a trick: since $g_jf_i - f_jg_i = 0$ on $D_V(g_i)\cap D_V(g_j)=D_V(g_ig_j)$, we get 
+\begin{equation}
+    g_ig_j(g_jf_i-f_jg_i) = 0\;\text{ on }V.
+\end{equation}
+Furthermore, we still have $\varphi\big|_{D_V(g_i)}=g_if_i / g_i^2$.
+So we \textcolor{red}{change notation} again: $g_i^2\to g_i$ and $g_if_i\to f_i$, so we have 
+\begin{equation}
+    g_if_j - g_jf_i = 0,\;\forall i,j=1,\dots,\ell\quad (***).
+\end{equation}
+Now, by equation $(**)$, there exist $m>0$ such that 
+\begin{equation}
+    g^m = \sum_jA_jF_j + \sum_kB_kg_k 
+\end{equation}
+and we get on $V$:
+\begin{equation}
+    g^m = \sum_k B_kg_k.
+\end{equation}
+Now, by using equation $(***)$, we have 
+\begin{equation}
+    f_ig^m = \sum_kB_kf_ig_k = \sum_kB_kf_kg_i = (\sum_kB_kf_k)g_i.
+\end{equation}
+So if $q\in D_V(g_i)$, we have $\varphi(q) = \tfrac{f_i}{g_i}(q)=\tfrac{f}{g^m}(q)$, where we set $f=\sum_kB_kf_k$.\qed

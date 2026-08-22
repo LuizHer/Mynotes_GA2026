@@ -274,6 +274,13 @@ $D_V(g)=\bigcup_{\lambda\in I}D_V(g_\lambda)$.\qed
     \end{definition}
 \end{dang}
 
+\begin{dang}
+    \begin{notation}
+    Let $V$ be an affine algebraic set and let $U\subset V$ be an open set, we denote 
+    $\mathcal{F}(U)=\{U\overset{\text{regular}}{\rightarrow}k\}$.
+\end{notation}
+\end{dang}
+
 
 \begin{dang}
     \begin{lemma}
@@ -282,7 +289,7 @@ $D_V(g)=\bigcup_{\lambda\in I}D_V(g_\lambda)$.\qed
         \begin{equation}
             \mathcal{F}(D_V(g)) \cong k[X_1,\dots,X_n]_g
         \end{equation}
-        where $\mathcal{F}$ denotes the sheaf of regular functions of $V$.
+        where $\mathcal{F}$ denotes the sheaf of regular functions on $V$.
     \end{lemma}
 \end{dang}
 Proof: First we have $D_V(g)=\bigcup_{i=1}^\ell D_V(g_i)$ and since $\varphi$ is regular, there exists 
@@ -337,3 +344,186 @@ So if $q\in D_V(g_i)$, we have $\varphi(q) = \tfrac{f_i}{g_i}(q)=\tfrac{f}{g^m}(
         functions is the set of polynomials on $V$.
     \end{corollary}
 \end{dang}
+
+\begin{dang}
+    \begin{definition}
+        A morphism between two affine algebraic sets $V_1\subset k^n$ and $V_2\subset k^m$ is a function 
+        $\varphi:V_1\to V_2$ such that for any open set $U\subset V_2$, we have 
+        \begin{equation}
+            \varphi_U^{\#}:\mathcal{F}(U,k)\overset{-\circ\varphi}{\rightarrow}\mathcal{F}(\varphi^{-1}(U),k),\;
+            \varphi_U^{\#}(\mathcal{O}_{V_1}(U))\subset \mathcal{O}_{V_2}(\varphi^{-1}(U)).
+        \end{equation}
+    \end{definition}
+\end{dang}
+
+Using more fancing words, the previous definition says that a continuous map $\varphi:V_1\to V_2$ is a morphism 
+if the composition map $\varphi_U^{\#}:\mathcal{F}(U,k)\overset{-\circ\varphi}{\rightarrow}\mathcal{F}(\varphi^{-1}(U),k)$
+induces a sheaf morphism 
+\begin{equation}
+    \varphi^\#(U):\mathcal{O}_{V_2}\to f_*\mathcal{O}_{V_1}.
+\end{equation}
+We use the notation $f_*\mathcal{O}_{V_1}$ for direct image sheaf, it's defined by 
+$f_*\mathcal{O}_{V_1}(U)=\mathcal{O}_{V_1}(f^{-1}(U))$.
+
+
+\section{Lecture 4}
+
+\begin{dang}
+\textbf{First exercise}. Let $U=k^2-\{0\}$, show that the set of regular functions $U\to k$ are polynomials.    
+\end{dang}
+
+\begin{dang}
+    \begin{definition}
+        A \underline{function space} is a topological space $X$ with a sheaf $\mathcal{O}_X$ such that 
+        for any open set $U\subset X$, we have 
+        \begin{itemize}
+            \item[(1)] $\mathcal{O}_X(U)\overset{\text{subring}}{\subset} \{U\overset{\text{continuous}}{\to}k\}$
+            \item[(2)] Let $f\in\mathcal{O}_X(U)$, then $f$ has an inverse in $\mathcal{O}_X(U)$ if and only if 
+            $f(q)\neq0,\;\forall q\in U$.
+        \end{itemize}
+    \end{definition}
+\end{dang}
+
+
+\begin{dang}
+\begin{lemma}
+    An affine algebraic set $V\subset k^n$ equiped if the sheaf of regular functions is a function space.
+\end{lemma}
+\end{dang}
+Proof: Let $U\subset X$ be an open set and $f\in\mathcal{O}_X(U)$. Then, by definition, there exist an open cover 
+$U=\bigcup_\lambda U_\lambda$ such that $f|_{U_\lambda}=f_\lambda/g_\lambda$, where $g_\lambda(q)\neq0\;\forall q\in U_\lambda$. 
+To prove that $f$ is continuous, it's sufficient to prove that $f^{-1}(a)\subset V$ is closed for all $a\in k$. 
+So we prove that $(f|_{U_\lambda})^{-1}(a)$ is closed in $V$ for all $\lambda$, which can be verified by the 
+equality
+\begin{equation}
+    V\cap V(f_\lambda - ag_\lambda) = (f|_{U_\lambda})^{-1}(a).
+\end{equation}
+The second item is clear.\qed 
+
+\begin{dang}
+    \begin{definition}
+        Let $(X,\mathcal{O}_X)$ and $(Y,\mathcal{O}_Y)$ be two function spaces. We define a morphism $X\to Y$ to be a 
+        a continuous map $f:X\to Y$ which induces a sheaf map $f^\#:\mathcal{O}_Y\to f_*\mathcal{O}_Y$ in the sence that 
+        if $f^\#(U)(g)=g\circ f$ for $g\in\mathcal{O}_Y(U)$, then $f^\#(U)(\mathcal{O}_Y(U))\subset \mathcal{O}_X(f^{-1}(U))$.
+    \end{definition}
+\end{dang}
+
+\begin{dang}
+    \begin{definition}
+        An \underline{affine algebraic variety} is a function space $(X,\mathcal{O}_X)$ isomorphic to 
+        an affine algebraic set with Zariski topology and sheaf of regular functions.
+    \end{definition}
+\end{dang}
+
+
+\begin{dang}
+    \begin{definition}
+        Let $(X,\mathcal{O}_X)$ be a function space, and $U\subset X$ be an open set with induced topology and 
+        $\mathcal{O}_U=\mathcal{O}_X|_U$. Then $(U,\mathcal{O}_U)$ is a function space called 
+        \underline{induced open subspace}.
+    \end{definition}
+\end{dang}
+
+\begin{dang}
+    \begin{definition}
+        An \underline{abstract algebraic variety} is a function space $(X,\mathcal{O}_X)$ such that there exist an open covering  
+        $X=\bigcup_\lambda U_\lambda$ with the property that for each $\lambda$, the induced 
+        open subspace $(U_\lambda,\mathcal{O}_{U_\lambda})$ is an affine algebraic variety.
+    \end{definition}
+\end{dang}
+
+\begin{dang}
+    \begin{remark}
+    In many texts we have the additional hypothesis of irredutibility in the definition of algebraic varieties.
+\end{remark}
+\end{dang}
+
+\begin{dang}
+    \begin{definition}
+        An affine algebraic variety is said to be \underline{quasi-affine} if it's isomorphic, as a function space, 
+        to an induced open subspace of an affine algebraic variety.
+    \end{definition}
+\end{dang}
+
+\begin{dang}
+    \begin{lemma}
+        Let $(X,\mathcal{O}_X)$ be a function space and $Y\subset k^n$ be a quasi affine algebraic set
+    \end{lemma}
+\end{dang}
+
+
+\begin{dang}
+    \begin{lemma}\label{lemma: coordinate criteria to a map be a morphism of function spaces}
+        Let $(X,\mathcal{O}_X)$ be a function space and $Y\subset k^n$ be a quasi-affine algebraic set. 
+        Then $f:X\to Y$ is a morphism if and only $f=(g_1,\dots,g_n)$ with $g_i\in\mathcal{O}_X(X)$. Here, 
+        we think $Y$ as an induced open subspace of an affine algebraic set.
+    \end{lemma}
+\end{dang}
+Proof: $(\Rightarrow)$ The coordinate functions $x_i|_Y:Y\to k$ are regular functions, by definition. Now 
+$g_i = x_i\circ f = f^\#(Y)(x_i)\in\mathcal{O}_X(f^{-1}(Y))=\mathcal{O}_X(X)$, because 
+$x_i\in\mathcal{O}_Y(Y)=\{Y\overset{\text{regular}}{\to}k\}$.\par 
+$(\Leftarrow)$ A closed set of $Y$ is of the form $V(F)\cap Y$ 
+\textcolor{red}{(would not be of the form $V(F_1,\dots, F_m)$ in general ?)}. However
+$f^{-1}(V(F)\cap Y)=\{p\in X: F(g_1,\dots, g_n)(p)=0\}$ which is closed in $X$ provided we show that 
+$F(g_1,\dots, g_n)$ is continuous. However, since $\mathcal{O}_X(X)$ is a ring, we have $F(g_1,\dots, g_n)\in\mathcal{O}_X(X)$. 
+Furthermore, if $U\subset Y$ is an open set and $\varphi:U\to k$ is regular, we need to show that 
+$f^{\#}(U)(\varphi)\in\mathcal{O}_X(f^{-1}(U))$. Let $U^\prime\subset U$ be such that 
+$\varphi|_{U^\prime}=F/G,\;G(q)\neq0\;\forall q\in U^\prime$. Then we have 
+\begin{equation}
+    f^\#(U^\prime)(\varphi)=\varphi\circ f|_{f^{-1}(U^\prime)} = 
+    \frac{F(g_1,\dots, g_n)}{G(g_1,\dots, g_n)}\bigg|_{f^{-1}(U^\prime)}.
+\end{equation}
+Furthermore 
+\begin{equation}
+    G\circ f(q) = G(g_1,\dots, g_n)(q) \neq 0,\;\forall q\in f^{-1}(U^\prime).
+\end{equation}
+Since $G(g_1,\dots,g_n)|_{f^{-1}(U^\prime)}\in\mathcal{O}_X(f^{-1}(U^\prime))$, the previous equation 
+shows that the inverse $1/G(g_1,\dots,g_n)$ also is an element of $\mathcal{O}_X(f^{-1}(U^\prime))$. Now, let 
+$U=\bigcup_\lambda U_\lambda,\;\varphi|_{U_\lambda}=F_\lambda/G_\lambda$, then we see that 
+\begin{equation}
+    f^\#(U_\lambda)(\varphi|_{U_\lambda})\subset \mathcal{O}_X(f^{-1}(U_\lambda)).
+\end{equation}
+The glueing axiom shows that $f^\#(U)(\varphi)\in\mathcal{O}_X(f^{-1}(U))$.\qed
+
+
+\begin{dang}
+    \begin{lemma}
+        Let $V\subset k^n$ be an affine algebraic set and $D_V(F)\subset V$ an affine algebraic set. Then 
+        the induced open subspace 
+        $(D_V(F), \mathcal{O}_{D_V(F)})$ is a quasi-affine algebraic variety, by definition. However, we have more, 
+        it's also an affine algebraic variety.
+    \end{lemma}
+\end{dang}
+Proof: Let $V=V(G_1,\dots, G_m)$ and define the map 
+\begin{equation}
+    \varphi: D_V(F)\rightarrow V(x_0F-1, G_1,\dots, G_m)\subset k^{n+1}:(a_1,\dots,a_n)\mapsto 
+    (\frac{1}{F(a_1,\dots, a_n)},a_1,\dots, a_n)
+\end{equation}
+By the lemma~(\ref{lemma: coordinate criteria to a map be a morphism of function spaces}), we see that 
+$\varphi$ is a morphism. Furthermore, it has a set theoretical inverse given by the projection 
+\begin{equation}
+    \psi:V(x_0F-1, G_1,\dots, G_m)\to D_V(F):(a_0,\dots,a_n)\mapsto (a_1,\dots, a_n).
+\end{equation}
+By the same lemma, this map is also a morphism. Since $f\psi = \mathds{1}_{D_V(x0F-1,\dots)}$ and 
+$\psi f = \mathds{1}_{D_V(F)}$, we see that $\varphi$ is an isomorphism (the induced 
+sheaf morphism would be an isomorphism by construction).\qed
+
+\begin{dang}
+    \begin{remark}
+        Let $(X,\mathcal{O}_X)$ be an affine algebraic variety and 
+        $\varphi:(V,\mathcal{O}_V)\to (X,\mathcal{O_X})$ an isomorphism, where $v\subset k^n$ is an algebraic set. 
+        Then this isomorphism, induces another isomorphism
+        \begin{equation}
+            (D_V(F),\mathcal{O}_{D_V(F)}) \to (X_f,\mathcal{O}_{X_f})
+        \end{equation}
+        where $F=f\circ\varphi$ and $X_f = \varphi(D_V(F))=\{p\in X: f(p)\neq0\}$.
+    \end{remark}
+\end{dang}
+
+\begin{dang}
+    \begin{corollary}
+        A quasi-affine algebraic variety is an abstract algebraic variety.
+    \end{corollary}
+\end{dang}
+Proof: A quasi-affine algebraic variety has a topological basis consisting of principal open subsets, which 
+are affine algebraic varieties.

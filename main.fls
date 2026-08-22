@@ -504,6 +504,12 @@ INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\eul
 INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
 INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri10.tfm
+INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\tex\latex\doublestroke\udsrom.fd
+INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\tex\latex\doublestroke\udsrom.fd
+INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\tex\latex\doublestroke\udsrom.fd
+INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom10.tfm
+INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
+INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
 INPUT .\chapters\Humphreys_notes.tex
 INPUT .\chapters\Humphreys_notes.tex
 OUTPUT chapters\Humphreys_notes.aux
@@ -535,6 +541,8 @@ INPUT .\main.out
 INPUT .\main.out
 INPUT main.run.xml
 OUTPUT main.run.xml
+INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\type1\public\doublestroke\dsrom10.pfb
+INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\type1\public\doublestroke\dsrom10.pfb
 INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
 INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
 INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx10.pfb

@@ -383,9 +383,6 @@ INPUT main.aux
 INPUT .\chapters\2026-ClassNotes.aux
 INPUT .\chapters\2026-ClassNotes.aux
 INPUT chapters\2026-ClassNotes.aux
-INPUT .\chapters\Humphreys_notes.aux
-INPUT .\chapters\Humphreys_notes.aux
-INPUT chapters\Humphreys_notes.aux
 INPUT .\chapters\AlgebraicGroups.aux
 INPUT .\chapters\AlgebraicGroups.aux
 INPUT chapters\AlgebraicGroups.aux
@@ -510,13 +507,6 @@ INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\tex\latex\doublestroke\udsrom
 INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom10.tfm
 INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
 INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
-INPUT .\chapters\Humphreys_notes.tex
-INPUT .\chapters\Humphreys_notes.tex
-OUTPUT chapters\Humphreys_notes.aux
-INPUT .\chapters\Humphreys_notes.tex
-INPUT .\chapters\Humphreys_notes.tex
-INPUT chapters\Humphreys_notes.tex
-INPUT C:\Users\herin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT .\chapters\AlgebraicGroups.tex
 INPUT .\chapters\AlgebraicGroups.tex
 OUTPUT chapters\AlgebraicGroups.aux
@@ -528,9 +518,6 @@ INPUT main.aux
 INPUT .\chapters\2026-ClassNotes.aux
 INPUT .\chapters\2026-ClassNotes.aux
 INPUT chapters\2026-ClassNotes.aux
-INPUT .\chapters\Humphreys_notes.aux
-INPUT .\chapters\Humphreys_notes.aux
-INPUT chapters\Humphreys_notes.aux
 INPUT .\chapters\AlgebraicGroups.aux
 INPUT .\chapters\AlgebraicGroups.aux
 INPUT chapters\AlgebraicGroups.aux

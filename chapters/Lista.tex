@@ -27,19 +27,10 @@ Furthermore, if $U$ is isomorphic to an affine
 algebraic set, then we would have an injective morphism $\varphi:V(S)\subset k^2\hookrightarrow k^2$ (which is 
 not necesseraly an inclusion) such that the induced map 
 \begin{equation}
-    \varphi^\#:k[X,Y]\to\mathcal{O}_V(V) = D_V(1)\cong k[X,Y]
+    \varphi^\#:k[X,Y]\to\mathcal{O}_V(V)\cong k[X,Y]/I(V)
 \end{equation}
-is an isomorphism. However, if $(\varphi^\#)^{-1}(X)=F$ and $(\varphi^\#)^{-1}(Y)=G$, then the map 
-$\psi=(F,G)$ is such that $\varphi\psi = \mathds{1}_{k^2},\psi\varphi=\mathds{1}_{k^2}$. In this condition 
-\begin{equation}
-    \begin{split}
-        &p\in V((\varphi^\#)^{-1}(S))\iff\\
-        &(\varphi^\#)^{-1}(h)(p)=0,\;\forall h\in S\iff\\
-        &h\psi(p)=0,\;\forall h\in S\iff\\
-        &\psi(p) \in V(S)\iff\\
-        &p \in \varphi(V(S))\quad(\text{because }\varphi\text{ is injective}).
-    \end{split}
-\end{equation}
-So $U$ can not be isomorphic to an affine algebraic set.\qed
+is an isomorphism. However, if $h\in k[X,Y]$ and $h|_V=0$, then $(\varphi^\#)^{-1}(\overline{h})=0$. This means that 
+$h(F,G)=0$, where $F=(\varphi^\#)^{-1}(\overline{X}),\; G = (\varphi^\#)^{-1}(\overline{Y})$.
+
 
 

@@ -293,7 +293,7 @@ $\overline{D(f)}=k^n$.\qed
 \begin{dang}
     \begin{notation}
     Let $V$ be an affine algebraic set and let $U\subset V$ be an open set, we denote 
-    $\mathcal{F}(U)=\{U\overset{\text{regular}}{\rightarrow}k\}$.
+    $\mathcal{O}_V(U)=\{U\overset{\text{regular}}{\rightarrow}k\}$.
 \end{notation}
 \end{dang}
 
@@ -303,9 +303,11 @@ $\overline{D(f)}=k^n$.\qed
         Let $V\subset k^n$ be an affine algebraic set and $g\in k[X_1,\dots, X_n]$. Then the ser of regular functions 
         $\varphi: D_V(g)\to k$ is of the form $f/g^m$ for some $f\in k[X_1,\dots, X_n]$ and $m>0$. So 
         \begin{equation}
-            \mathcal{F}(D_V(g)) \cong k[X_1,\dots,X_n]_g
+            \mathcal{O}_V(D_V(g)) \cong \widetilde{\psi}(k[X_1,\dots,X_n]_g)
         \end{equation}
-        where $\mathcal{F}$ denotes the sheaf of regular functions on $V$.
+        where $\psi: k[X_1,\dots, X_n]\rightarrow \mathcal{O}_V(D_V(g))$ is the map that takes a polynomial 
+        and restricts it to $D_V(g)$ and $\widetilde{\psi}$ is the corresponding map induced by the universal
+        property of localization. 
     \end{lemma}
 \end{dang}
 Proof: First we have $D_V(g)=\bigcup_{i=1}^\ell D_V(g_i)$ and since $\varphi$ is regular, there exists 
@@ -356,8 +358,11 @@ So if $q\in D_V(g_i)$, we have $\varphi(q) = \tfrac{f_i}{g_i}(q)=\tfrac{f}{g^m}(
 
 \begin{dang}
     \begin{corollary}
-        Since $V=D_V(1)$, we have $\mathcal{F}(V)=k[X_1,\dots,X_n]$. So the set of regular 
-        functions is the set of polynomials on $V$.
+        Since $V=D_V(1)$, we have 
+        \begin{equation}
+            \mathcal{O}_V(V)=\psi(k[X_1,\dots,X_n])\cong k[\underline{X}]/I(V) = k[V].
+        \end{equation}
+        where $\psi: k[\underline{X}]\to O_V(V)$ is as in the previous theorem.
     \end{corollary}
 \end{dang}
 

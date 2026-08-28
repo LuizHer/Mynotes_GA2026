@@ -265,6 +265,22 @@ In the last equation we used Hilbert basis theorem: The sequence
 must terminate at some point, because $k[\underline{X}]$ is Noetherian. Then we conclude that 
 $D_V(g)=\bigcup_{\lambda\in I}D_V(g_\lambda)$.\qed
 
+
+\begin{dang}
+    \begin{lemma}
+        Suppose that $k$ is an infinity field, then open sets $U\subset k^n$ are dense in the Zariski topology.
+    \end{lemma}
+\end{dang}
+Proof: Since basic open sets form a basis for the Zariski topology on $k^n$, it's sufficient to prove that 
+$D(f)$ is dense in $k^n$. Let $\overline{D(f)}=V(g_1,\dots, g_m),\;m\geq1$ and $x\in k^n$, then we have 
+for all $i=1,\dots, m$:
+\begin{equation}
+    f(x)\neq0\Rightarrow g_i(x) = 0\Rightarrow fg_i(x)=0,\;\forall x\in k^n.
+\end{equation}
+Therefore, since $k$ is infinity, we have $fg_i=0\in k[\underline{X}],\;\forall i$ and $g_i=0,\;\forall i$. Then we see that 
+$\overline{D(f)}=k^n$.\qed
+
+
 \begin{dang}
     \begin{definition}
     (Regular functions). Let $V\subset k^n$ be an affine algebraic set and $U\subset V$ be an open set. 
@@ -368,24 +384,6 @@ $f_*\mathcal{O}_{V_1}(U)=\mathcal{O}_{V_1}(f^{-1}(U))$.
 
 \section{Lecture 4}
 
-\begin{dang}
-\textbf{First exercise}. Let $U=k^2-\{0\}$, show that the set of regular functions $U\to k$ are polynomials.    
-\end{dang}
-\textbf{Solution}. Let $\varphi\in\mathcal{O}_U(U)$ be a regular function, then 
-$\varphi|_{D_{k^2}(X)}=f/X^m$ and $\varphi|_{D_{k^2}(Y)}=g/Y^n$ and on the intersection $D(X)\cap D(Y)=D(XY)$, we have 
-\begin{equation}
-    Y^nf - X^mg = 0\quad(*).
-\end{equation}
-Since there exist an infinity number of points $p\in D(XY)$, we also have the equality $(*)$ in 
-$k[X,Y]$. Moreover, from this equation, we see that all the terms of $g$ are of the form 
-$X^kY^\ell,\;\ell\geq n$ and all terms of $f$ are of the form $X^kY^\ell,\;k\geq m$. Therefore, the quotient
-$F=f/X^m=g/Y^n$ is a polynomial and since $U = D(X)\cup D(Y)$, we get $\varphi = F\in k[X,Y]$.
-
-\begin{remark}
-    We used the fact that $\mathcal{O}_{U}(U^\prime)=\mathcal{O}_{k^2}(U^\prime)$ for all 
-    $U^\prime\subset U$ open, which follows by definition. 
-    The we applied lemma~(\ref{lemma: regular functions on principal open sets}).
-\end{remark}
 
 \begin{dang}
     \begin{definition}
@@ -542,3 +540,7 @@ sheaf morphism would be an isomorphism by construction).\qed
 \end{dang}
 Proof: A quasi-affine algebraic variety has a topological basis consisting of principal open subsets, which 
 are affine algebraic varieties.
+
+
+
+\section{Lecture 5}

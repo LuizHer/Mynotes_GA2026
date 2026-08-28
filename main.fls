@@ -386,6 +386,9 @@ INPUT chapters\2026-ClassNotes.aux
 INPUT .\chapters\AlgebraicGroups.aux
 INPUT .\chapters\AlgebraicGroups.aux
 INPUT chapters\AlgebraicGroups.aux
+INPUT .\chapters\Lista.aux
+INPUT .\chapters\Lista.aux
+INPUT chapters\Lista.aux
 INPUT .\bibliography.aux
 INPUT .\bibliography.aux
 INPUT bibliography.aux
@@ -513,6 +516,12 @@ OUTPUT chapters\AlgebraicGroups.aux
 INPUT .\chapters\AlgebraicGroups.tex
 INPUT .\chapters\AlgebraicGroups.tex
 INPUT chapters\AlgebraicGroups.tex
+INPUT .\chapters\Lista.tex
+INPUT .\chapters\Lista.tex
+OUTPUT chapters\Lista.aux
+INPUT .\chapters\Lista.tex
+INPUT .\chapters\Lista.tex
+INPUT chapters\Lista.tex
 OUTPUT bibliography.aux
 INPUT main.aux
 INPUT .\chapters\2026-ClassNotes.aux
@@ -521,6 +530,9 @@ INPUT chapters\2026-ClassNotes.aux
 INPUT .\chapters\AlgebraicGroups.aux
 INPUT .\chapters\AlgebraicGroups.aux
 INPUT chapters\AlgebraicGroups.aux
+INPUT .\chapters\Lista.aux
+INPUT .\chapters\Lista.aux
+INPUT chapters\Lista.aux
 INPUT .\bibliography.aux
 INPUT .\bibliography.aux
 INPUT bibliography.aux

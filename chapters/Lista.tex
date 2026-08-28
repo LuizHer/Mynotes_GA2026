@@ -1,0 +1,45 @@
+\chapter{List of exercises}
+
+\begin{dang}
+\textbf{Exercise 1}. Let $U=k^2-\{0\}$, show that the set of regular functions $U\to k$ are polynomials, then 
+conclude that $U$ is not an affine variety.    
+\end{dang}
+\textbf{Solution}. Let $\varphi\in\mathcal{O}_U(U)$ be a regular function, then 
+$\varphi|_{D_{k^2}(X)}=f/X^m$ and $\varphi|_{D_{k^2}(Y)}=g/Y^n$ and on the intersection $D_{k^2}(X)\cap D_{k^2}(Y)=D_{k^2}(XY)$, we have 
+\begin{equation}
+    Y^nf - X^mg = 0\quad(*).
+\end{equation}
+Since there exist an infinity number of points $p\in D_{k^2}(XY)$ (assuming $k$ is algebraically closed), 
+we also have the equality $(*)$ in $k[X,Y]$. Now, let $f=\sum a_{ij}X^iY^j$ and 
+$g=\sum b_{ij} X^iY^j$. Then, equality $(*)$ means 
+\begin{equation}
+    a_{i, j-n} = a_{i-m,j},\;\forall i\geq m, j\geq n.
+\end{equation}  
+Therefore $f/X^m = g/Y^n\in k[X,Y]$ and $\varphi$ is a polynomial, because $U=D_{k^2}(X)\cup D_{k^2}(Y)$. In conclusion,
+we proved that the inclusion $i:U\hookrightarrow k^2$ induces a ring isomorphism
+\begin{equation}
+    i^\#(k^2): k[X,Y]\to \mathcal{O}_U(U):f\mapsto f|_U\; (**).
+\end{equation}
+Now assume $U=V(S),\;S\subset k[X,Y]$, then $f\in S\Rightarrow f|_U=0$ and $f=0$ because of $(**)$. So 
+$S=\{0\}$ and $U=k^2$, which is a contradiction.\par  
+
+Furthermore, if $U$ is isomorphic to an affine 
+algebraic set, then we would have an injective morphism $\varphi:V(S)\subset k^2\hookrightarrow k^2$ (which is 
+not necesseraly an inclusion) such that the induced map 
+\begin{equation}
+    \varphi^\#:k[X,Y]\to\mathcal{O}_V(V) = D_V(1)\cong k[X,Y]
+\end{equation}
+is an isomorphism. However, if $(\varphi^\#)^{-1}(X)=F$ and $(\varphi^\#)^{-1}(Y)=G$, then the map 
+$\psi=(F,G)$ is such that $\varphi\psi = \mathds{1}_{k^2},\psi\varphi=\mathds{1}_{k^2}$. In this condition 
+\begin{equation}
+    \begin{split}
+        &p\in V((\varphi^\#)^{-1}(S))\iff\\
+        &(\varphi^\#)^{-1}(h)(p)=0,\;\forall h\in S\iff\\
+        &h\psi(p)=0,\;\forall h\in S\iff\\
+        &\psi(p) \in V(S)\iff\\
+        &p \in \varphi(V(S))\quad(\text{because }\varphi\text{ is injective}).
+    \end{split}
+\end{equation}
+So $U$ can not be isomorphic to an affine algebraic set.\qed
+
+
